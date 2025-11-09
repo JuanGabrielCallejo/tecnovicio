@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Newsletter</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./logos/mosca.webp">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo">
+                <a href="index.html"><img src="./logos/logopequeño.png" alt="Logo" /></a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Noticias</a>
+                <a href="agenda.html">Agenda</a>
+                <a href="analisis.html">Análisis</a>
+                <a href="newsletter.html" class="active">Newsletter</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="site-main">
+        <section class="page-container">
+            <h1>Newsletter</h1>
+            <p>Suscríbete para recibir un resumen semanal con lo mejor del mundo gamer.</p>
+
+
+            <form class="subscribe-form" action="#" method="post">
+
+                <h2>Hazte socio</h2>
+                <p>Rellena tus datos para recibir el newsletter y tu carnet de socio.</p>
+
+                <!-- DATOS PERSONALES -->
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" type="text" placeholder="Juan" required>
+
+                <label for="apellidos">Apellidos</label>
+                <input id="apellidos" name="apellidos" type="text" placeholder="Pérez Gómez" required>
+
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" placeholder="tu@correo.com" required>
+
+                <label for="telefono">Teléfono (opcional)</label>
+                <input id="telefono" name="telefono" type="tel" placeholder="+34 600 000 000">
+
+                <!-- DIRECCIÓN POSTAL -->
+                <label for="direccion">Dirección</label>
+                <input id="direccion" name="direccion" type="text" placeholder="Calle Gamer 23, 4ºB" required>
+
+                <label for="ciudad">Ciudad</label>
+                <input id="ciudad" name="ciudad" type="text" placeholder="Vigo" required>
+
+                <label for="cp">Código postal</label>
+                <input id="cp" name="cp" type="text" placeholder="36200" required>
+
+
+                <!-- TIPO DE ENVÍO -->
+                <label for="envio">¿Cómo quieres recibir el newsletter?</label>
+                <select id="envio" name="envio" required>
+                    <option value="email">Solo por correo electrónico</option>
+                    <option value="postal">Solo por correo convencional</option>
+                    <option value="ambos">Ambos (soy fan hardcore)</option>
+                </select>
+
+                <!-- PRIVACIDAD -->
+                <label class="checkbox-legal">
+                    <input type="checkbox" required>
+                    Acepto que mis datos sean usados para la suscripción al newsletter.
+                </label>
+
+                <button class="btn" type="submit">Hacerme socio</button>
+            </form>
+
+
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>Sitio web realizado por Juan Gabriel Callejo.Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

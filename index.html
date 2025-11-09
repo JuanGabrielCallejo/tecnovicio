@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Página de noticias tecnológicas y de videojuegos.">
+    <meta name="keywords" content="tecnología, videojuegos, noticias, análisis, lanzamientos">
+    <meta name="author" content="Juan Gabriel Callejo">
+    <title>Tecnovicio - Noticias</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./logos/mosca.webp">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo">
+                <a href="index.html"><img src="./logos/logopequeño.png" alt="Logo" /></a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="active">Noticias</a>
+                <a href="agenda.html">Agenda</a>
+                <a href="analisis.html">Análisis</a>
+                <a href="newsletter.html">Newsletter</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <section class="page-container">
+            <h1>Noticias</h1>
+            <p>¿Qué se está cociendo? Nosotros te los servimos en bandeja de oro.</p>
+
+
+            <div class="card-grid">
+                <article class="card">
+                    <div class="card-img-container">
+                        <img src="./imagenes/noticias/cyberpunk.webp" alt="Cyberpunk 2077">
+                    </div>
+                    <h2>Cyberpunk 2077 recibe actualización sorpresa</h2>
+                    <p>CD Projekt Red lanzó un parche que mejora NPC y añade nuevas actividades en Night City.</p>
+                    <a class="btn" href="#">Leer más</a>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-img-container">
+                        <img src="./imagenes/noticias/nintendo.webp" alt="Nintendo Direct">
+                    </div>
+                    <h2>Nintendo confirma nuevo Direct para finales de mes</h2>
+                    <p>Se esperan anuncios sobre Switch 2 y posibles nuevos juegos de Mario y Zelda.</p>
+                    <a class="btn" href="#">Leer más</a>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-img-container">
+                        <img src="./imagenes/noticias/playstation.webp" alt="PlayStation Streaming">
+                    </div>
+                    <h2>PlayStation anuncia servicio de streaming en 4K</h2>
+                    <p>Los jugadores podrán hacer streaming de juegos de PS5 sin necesidad de descargar.</p>
+                    <a class="btn" href="#">Leer más</a>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-img-container">
+                        <img src="./imagenes/noticias/xbox.webp" alt="Xbox Game Pass">
+                    </div>
+                    <h2>Xbox Game Pass añade 12 títulos nuevos</h2>
+                    <p>Entre ellos destaca *Hades II* como lanzamiento directo en el servicio.</p>
+                    <a class="btn" href="#">Leer más</a>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-img-container">
+                        <img src="./imagenes/noticias/fortnite.webp" alt="Fortnite Temporada Invierno">
+                    </div>
+                    <h2>Fortnite introduce temporada de invierno</h2>
+                    <p>Se incluyen nuevas skins, mapas congelados y desafíos semanales para los jugadores.</p>
+                    <a class="btn" href="#">Leer más</a>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-img-container">
+                        <img src="./imagenes/noticias/steam.webp" alt="Steam Wishlist">
+                    </div>
+                    <h2>Steam lanza nueva función de wishlist colaborativa</h2>
+                    <p>Ahora puedes compartir tu lista de deseos con amigos y ver quién quiere qué juegos.</p>
+                    <a class="btn" href="#">Leer más</a>
+                </article>
+            </div>
+
+
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>Sitio web realizado por Juan Gabriel Callejo.Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+
+
+
+    <script>
+        // Modal mejorado: muestra imagen y aplica blur al fondo
+        const cards = document.querySelectorAll('.card');
+        let modal = document.querySelector('.modal-view');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.classList.add('modal-view');
+            document.body.appendChild(modal);
+        }
+
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('h2')?.innerText || '';
+                const text = card.querySelector('p')?.innerText || '';
+                const image = card.querySelector('img')?.src || '';
+
+
+                modal.innerHTML = `
+            <div class="modal-content">
+            ${image ? `<img src="${image}" class="modal-img" />` : ''}
+            <h2>${title}</h2>
+            <p>${text}</p>
+            <button id="closeModal">Cerrar</button>
+            </div>`;
+
+
+                modal.classList.add('show');
+                document.body.classList.add('blur-bg');
+
+
+                document.getElementById('closeModal').addEventListener('click', () => {
+                    modal.classList.remove('show');
+                    document.body.classList.remove('blur-bg');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
